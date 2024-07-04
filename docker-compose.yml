@@ -6,7 +6,7 @@ volumes:
   sqlbackup:
 
 services:
-  db:
+  sqlserver:
     image: mcr.microsoft.com/mssql/server:2019-latest
     container_name: db-sqlserver
     restart: always
