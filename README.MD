@@ -26,7 +26,7 @@ Para averiguar la ubicación de las carpetas relacionadas con los volumenes, pue
 ```docker compose exec -it db /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -d master```
 **Opción 1:** Una vez dentro del contenedor, ejecutar el comando de T-SQL para crear la DB:
 ```
-CREATE DATABASE Terrafertil;
+CREATE DATABASE [nombre-db];
 GO
 ```
 **Opción 2:** podemos crear la DB desde un sql file ( que previamente debemos copiar al contenedor )
@@ -39,4 +39,4 @@ Y luego ejecutar el comando con la creación:
 ```docker cp [nombre-db].bak db-sqlserver:/var/opt/sqlserver/backup```
 
 **Restaurar DB:**
-```USE [master] RESTORE DATABASE [Terrafertil] FROM DISK = N'/var/opt/sqlserver/backup/[nombre-db].bak' WITH  FILE = 1, NOUNLOAD, REPLACE, STATS = 10```
+```USE [master] RESTORE DATABASE [nombre-db] FROM DISK = N'/var/opt/sqlserver/backup/[nombre-db].bak' WITH  FILE = 1, NOUNLOAD, REPLACE, STATS = 10```
