@@ -1,3 +1,9 @@
+### Construir la imagen:
+```docker compose build```
+
+### Ejecutar el contenedor:
+```docker compose up -d```
+
 ### Acerca de los permisos:
 
 El usuario que ejecuta comandos en el contenedor NO existe en el equipo local. Debido a que el contenedor posee un volumen (un enlace entre el equipo local y el contenedor para persistir los datos al reiniciar el contenedor ) debemos darle permisos de escritura al usuario del contenedor, en el equipo local. 
