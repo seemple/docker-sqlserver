@@ -29,8 +29,8 @@ GO
 Y luego ejecutar el comando con la creación:
 ```docker compose exec -it db /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -d master -i /var/opt/sqlserver/backup/start.sql```
 
-**Copiar DB a restaurar al contenedor:**
-```docker cp TERRAFERTIL_2018.bak db-sqlserver:/var/opt/sqlserver/backup```
+**Copiar DB a restaurar al contenedor: (OPCIONAL)**
+```docker cp [nombre-db].bak db-sqlserver:/var/opt/sqlserver/backup```
 
 **Restaurar DB:**
-```USE [master] RESTORE DATABASE [Terrafertil] FROM DISK = N'/var/opt/sqlserver/backup/TERRAFERTIL_2018.bak' WITH  FILE = 1, NOUNLOAD, REPLACE, STATS = 10```
+```USE [master] RESTORE DATABASE [Terrafertil] FROM DISK = N'/var/opt/sqlserver/backup/[nombre-db].bak' WITH  FILE = 1, NOUNLOAD, REPLACE, STATS = 10```
